@@ -4,7 +4,7 @@ import pandas as pd
 # Conectar ao banco de dados
 conn = sqlite3.connect("database.sqlite")
 
-# Criar um DataFrame 
+# Criar DataFrame 
 
 df_stop = pd.DataFrame({
     "name": ["Terminal São João", "Rua Jardim Alegre", "Terminal Pimentas", "Praça da Saudade", "Rua Manuel Antonio Major", "Rua Nossa Senhora Mãe dos Homens", "Av. Brigadeiro Faria Lima", "Rua Camilo Olivetti", "Av. Monteiro Lobato nº339"],
@@ -39,7 +39,6 @@ df_line = pd.DataFrame({
     "tariff_id": [3,3,3,3,3]
 })
 
-
 df_bus = pd.DataFrame({
     "number": [2309, 2320, 2239, 1227, 3279],
     "license_plate": ["FST2319", "FJN0630", "EZU5232", "CUC5473", "GAF4310"],
@@ -51,7 +50,6 @@ df_bus = pd.DataFrame({
     "acquisition_date": ["20-10-2014", "20-10-2014", "05-09-2013", "10-12-2009", "02-02-2016"],
     "accessibility": [1,1,0,0,1]
 })
-
 
 df_driver = pd.DataFrame({
     "name": ["Alana Rayanne Araujo Freitas", "Vitor Matheus de Azevedo Martins", "Daniela Alves de Araujo Freitas", "Renato Severino de Freitas", "Eduarda Rayanne Araujo Freitas"],
@@ -84,52 +82,19 @@ df_trip = pd.DataFrame({
 })
 
 df_line_stop = pd.DataFrame({
-    #FOREIGN KEY (line_id) REFERENCES line(id) ON DELETE CASCADE,
-    #FOREIGN KEY (stop_id) REFERENCES stop(id) ON DELETE CASCADE,
     "line_id": [1, 1, 1, 1, 1],
     "stop_id": [1, 9, 6, 2, 9],
     "sequence": [1, 9, 16, 18, 30]
 })
 
 # Inserir o DataFrame na tabela SQLite
-df_bus.to_sql("bus", conn, if_exists="replace", index=False)
-df_line.to_sql("line", conn, if_exists="replace", index=False)
-df_driver.to_sql("driver", conn, if_exists="replace", index=False)
-df_stop.to_sql("stop", conn, if_exists="replace", index=False)
-df_trip.to_sql("trip", conn, if_exists="replace", index=False)
-df_tariff.to_sql("tariff", conn, if_exists="replace", index=False)
-df_line_stop.to_sql("line_stop", conn, if_exists="replace", index=False)
-
-
-
-# Consultar os dados de volta usando pandas
-df_from_db = pd.read_sql("SELECT * FROM bus", conn)
-print("\nDados no banco:")
-print(df_from_db)
-
-df_from_db = pd.read_sql("SELECT * FROM line", conn)
-print("\nDados no banco:")
-print(df_from_db)
-
-df_from_db = pd.read_sql("SELECT * FROM driver", conn)
-print("\nDados no banco:")
-print(df_from_db)
-
-df_from_db = pd.read_sql("SELECT * FROM stop", conn)
-print("\nDados no banco:")
-print(df_from_db)
-
-df_from_db = pd.read_sql("SELECT * FROM trip", conn)
-print("\nDados no banco:")
-print(df_from_db)
-
-df_from_db = pd.read_sql("SELECT * FROM tariff", conn)
-print("\nDados no banco:")
-print(df_from_db)
-
-df_from_db = pd.read_sql("SELECT * FROM line_stop", conn)
-print("\nDados no banco:")
-print(df_from_db)
+df_bus.to_sql("bus", conn, if_exists="append", index=False)
+df_line.to_sql("line", conn, if_exists="append", index=False)
+df_driver.to_sql("driver", conn, if_exists="append", index=False)
+df_stop.to_sql("stop", conn, if_exists="append", index=False)
+df_trip.to_sql("trip", conn, if_exists="append", index=False)
+df_tariff.to_sql("tariff", conn, if_exists="append", index=False)
+df_line_stop.to_sql("line_stop", conn, if_exists="append", index=False)
 
 
 # Fechar conexão

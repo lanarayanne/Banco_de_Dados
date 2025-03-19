@@ -6,8 +6,7 @@ cursor = conn.cursor()
 
 cursor.execute("PRAGMA foreign_keys = ON;")
 
-# Criar tabela
-
+# Criar tabelas
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS stop (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -27,7 +26,6 @@ CREATE TABLE IF NOT EXISTS tariff (
 
 )
 """)
-
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS line (
@@ -60,7 +58,6 @@ CREATE TABLE IF NOT EXISTS bus (
     accessibility BOOLEAN NOT NULL
 )
 """)
-
 
 cursor.execute("""
 CREATE TABLE IF NOT EXISTS driver (
@@ -111,8 +108,7 @@ CREATE TABLE IF NOT EXISTS line_stop (
 )
 """)
 
-# Salvar e fechar conexão
+# Salvar e fechar 
 conn.commit()
 conn.close()
 
-print("Banco de dados criado com sucesso!")
