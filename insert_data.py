@@ -52,11 +52,11 @@ df_bus = pd.DataFrame({
 })
 
 df_driver = pd.DataFrame({
-    "name": ["Alana Rayanne Araujo Freitas", "Vitor Matheus de Azevedo Martins", "Daniela Alves de Araujo Freitas", "Renato Severino de Freitas", "Eduarda Rayanne Araujo Freitas"],
+    "name": ["Alana", "Vitor", "Daniela", "Renato", "Eduarda"],
     "cpf": ["546.853.255-54", "514.326.987-65", "284.122.365-98", "147.554.987-99", "321.411.768-54"],
-    "date_of_birth": ["10-12-1999", "07-04-1998", "09-07-1978", "06-03-1974", "12-03-2004"],
-    "phone_number": ["(81)982041282", "(82)999939067", "(11)971881243", "(11)974914015", "(11)950641214"],
-    "email": ["alanafreitas@gmail.com", "vitormartins@gmail.com", "danielaaraujo@gmail.com", "renatofreitas@gmail.com", "eduardarayanne@gmail.com"],
+    "date_of_birth": ["11-09-1999", "06-02-1998", "07-08-1978", "06-11-1974", "30-10-2004"],
+    "phone_number": ["(81)982054582", "(82)998929077", "(11)977831243", "(11)974317015", "(11)957641234"],
+    "email": ["alana@gmail.com", "vitor@gmail.com", "daniela@gmail.com", "renato@gmail.com", "eduarda@gmail.com"],
     "license_number": ["28980275904", "42889148902", "17423172287", "66178403045", "7568293003"],
     "license_category": ["BD", "ABD", "BCD", "BCDE", "BD"],
     "license_expiry_date": ["22/04/2030", "03/05/2027", "14/09/2034", "06/07/2030", "21/08/2026"],
@@ -65,7 +65,7 @@ df_driver = pd.DataFrame({
     "shift": ["Manhã", "Manhã", "Tarde", "Noite", "Tarde"],
     "street": ["Rua Pomerode", "Rua Monte Claro", "Rua 12 de Abril", "Rua Antonieta", "Rua da Paz" ],
     "house_number": [154, 21, 71, 411, 140],
-    "complement": [None, None, "apto 81 t2", None, "apto 602 bloco b"],
+    "complement": [None, None, "apto 81", None, "apto 6"],
     "city": ["Guarulhos", "Arapiraca", "Guarulhos", "Guarulhos", "Recife"],
     "state": ["SP", "AL", "SP", "SP", "PE"],
     "zip_code": ["07273150", "57843020", "07012055", "07525535", "50757535"]
